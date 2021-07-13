@@ -43,18 +43,22 @@ public class MainQLDB {
                     while (true){
                         System.out.println("Nhập phone danh bạ cần sửa");
                         String phone= scanner.nextLine();
+                        String choice3=null;
                         if(phone==null){
                             break;
                         }
                         for(DanhBa danhBa1: manager.list){
                             if(danhBa1.getPhone().equals(phone)){
                                 manager.update(phone);
+                                choice3= "a";
                                 break;
                             }else {
                                 System.out.println("Không tìm thấy, nhập lại");
                             }
                         }
-
+                        if(choice3.equals("a")){
+                            break;
+                        }
                     }
                     break;
                 case 4:
@@ -112,7 +116,7 @@ public class MainQLDB {
                     }
                     switch (choice6){
                         case 1:
-                            manager.readFile();
+                            manager.list=manager.readFile();
                             break;
                         default:
                             break;

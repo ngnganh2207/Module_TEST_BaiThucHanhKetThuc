@@ -174,6 +174,13 @@ public class Manager {
     }
 
     public void writeFile(){
+//        if (!danhBa.exists()){
+//            try {
+//                danhBa.createNewFile();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
         try {
             FileWriter fileWriter=new FileWriter(danhBa);
             bufferedWriter= new BufferedWriter(fileWriter);
@@ -195,13 +202,13 @@ public class Manager {
     }
 
     public ArrayList<DanhBa> readFile(){
-        if (!danhBa.exists()){
-            try {
-                danhBa.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+//        if (!danhBa.exists()){
+//            try {
+//                danhBa.createNewFile();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
         ArrayList<DanhBa> list= new ArrayList<>();
         try {
             FileReader fileReader= new FileReader(danhBa);
